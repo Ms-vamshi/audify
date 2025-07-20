@@ -1,0 +1,7 @@
+{
+  "environmentVariables": {
+    "OPENAI_API_KEY": {
+      "type": "secret"
+    }
+  }
+}
