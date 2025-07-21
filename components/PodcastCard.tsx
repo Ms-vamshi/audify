@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { api } from "@/convex/_generated/api";
-import { PodcastCardProps } from "@/types";
 import { useAudio } from "@/providers/AudioProvider";
+import { PodcastCardProps } from "@/types";
 
 const PodcastCard = ({
   imgUrl,
@@ -34,22 +34,18 @@ const PodcastCard = ({
     }
   };
   return (
-    <div onClick={handleViews} className="cursor-pointer">
-      <figure className="flex flex-col gap-2">
-        <Image
-          src={imgUrl}
-          width={174}
-          height={174}
-          alt="pod"
-          className="aspect-square h-fit w-full rounded-xl 2xl:size-[200px]"
-        />
-        <div className="flex flex-col">
-          <h1 className="text-16 truncate font-bold text-white-1">{title}</h1>
-          <h2 className="text-12 truncate font-normal capitalize text-white-4">
-            {description}
-          </h2>
-        </div>
-      </figure>
+    <div className="rounded-xl flex flex-col gap-3 bg-gray-900 p-4 transition-shadow hover:shadow-lg cursor-pointer" onClick={handleViews}>
+      <Image
+        src={imgUrl}
+        alt={title}
+        width={400}
+        height={160}
+        className="h-40 w-full object-cover rounded-xl"
+      />
+      <div className="flex flex-col gap-2">
+        <h2 className="font-bold text-base text-white-1">{title}</h2>
+        <p className="text-sm text-white-2">{description}</p>
+      </div>
     </div>
   );
 };

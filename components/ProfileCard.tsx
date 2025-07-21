@@ -38,15 +38,15 @@ const ProfileCard = ({
   if (!imageUrl) return <LoaderSpinner />;
 
   return (
-    <div className="mt-6 flex flex-col gap-6 max-md:items-center md:flex-row">
+    <div className="mt-6 flex flex-col gap-6 md:flex-row max-md:items-center">
       <Image
         src={imageUrl}
         width={250}
         height={250}
         alt="Podcaster"
-        className="aspect-square rounded-lg"
+        className="rounded-lg aspect-square"
       />
-      <div className="flex flex-col justify-center max-md:items-center">
+      <div className="flex flex-col gap-2.5 max-md:justify-center">
         <div className="flex flex-col gap-2.5">
           <figure className="flex gap-2 max-md:justify-center">
             <Image
@@ -55,11 +55,11 @@ const ProfileCard = ({
               height={15}
               alt="verified"
             />
-            <h2 className="text-14 font-medium text-white-2">
+            <h2 className="font-medium text-14 text-white-2">
               Verified Creator
             </h2>
           </figure>
-          <h1 className="text-32 font-extrabold tracking-[-0.32px] text-white-1">
+          <h1 className="font-extrabold text-32 text-white-1 tracking-[-0.32px]">
             {userFirstName}
           </h1>
         </div>
@@ -70,7 +70,7 @@ const ProfileCard = ({
             height={24}
             alt="headphones"
           />
-          <h2 className="text-16 font-semibold text-white-1">
+          <h2 className="font-semibold text-16 text-white-1">
             {podcastData?.listeners} &nbsp;
             <span className="font-normal text-white-2">monthly listeners</span>
           </h2>
@@ -78,7 +78,7 @@ const ProfileCard = ({
         {podcastData?.podcasts.length > 0 && (
           <Button
             onClick={playRandomPodcast}
-            className="text-16 bg-orange-1 font-extrabold text-white-1"
+            className="font-extrabold bg-orange-1 text-16 text-white-1"
           >
             <Image
               src="/icons/Play.svg"

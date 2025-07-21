@@ -1,33 +1,22 @@
 "use client";
 
-import { SignedIn, UserButton, useUser } from "@clerk/nextjs";
 import { useQuery } from "convex/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
+import { demoPodcasts } from "@/constants";
 import { api } from "@/convex/_generated/api";
-import { cn } from "@/lib/utils";
 import { useAudio } from "@/providers/AudioProvider";
 
-import Carousel from "./Carousel";
 import Header from "./Header";
-import { demoPodcasts } from "@/constants";
 
 const RightSidebar = () => {
-  const { user } = useUser();
-  const { audio, setAudio } = useAudio();
+  const { setAudio } = useAudio();
   const router = useRouter();
   const topPodcasters = useQuery(api.users.getTopUserByPodcastCount);
   return (
-    <section
-      className={cn("right_sidebar h-[calc(100vh-5px)]", {
-        "h-[calc(100vh-116px)]": audio?.audioUrl,
-      })}
-    >
-      {/* Remove Fans Like You header and carousel section entirely */}
-      {/* Top Podcasts Demo List */}
+    <section className="right_sidebar bg-gray-800 h-[calc(100vh-5px)]">
       <section className="flex flex-col gap-4 mt-8">
         <h2 className="text-16 font-bold text-white-1 mb-2">Top Podcasts</h2>
         {demoPodcasts.slice(0, 2).map((podcast) => (
@@ -42,10 +31,12 @@ const RightSidebar = () => {
               podcastId: podcast.id.toString(),
             })}
           >
-            <img
+            <Image
               src={podcast.imgURL}
               alt={podcast.title}
-              className="w-12 h-12 rounded object-cover"
+              width={48}
+              height={48}
+              className="object-cover size-12 rounded"
             />
             <div className="flex flex-col">
               <span className="text-14 font-bold text-white-1">{podcast.title}</span>
@@ -59,7 +50,7 @@ const RightSidebar = () => {
           {topPodcasters?.slice(0, 4).map((podcaster) => (
             <div
               key={podcaster._id}
-              className="flex cursor-pointer justify-between"
+              className="flex justify-between cursor-pointer"
               onClick={() => router.push(`/profile/${podcaster.clerkId}`)}
             >
               <figure className="flex items-center gap-2">

@@ -108,7 +108,7 @@ export const demoPodcasts = [
     title: "Joe Rogan Experience",
     description: "A long form, in-depth conversation",
     imgURL: "/images/demo1.png",
-    audioUrl: "/demo1.mp3",
+    audioUrl: "/Joe AH.mp3",
     tag: "fansLike",
   },
   {

@@ -3,13 +3,13 @@ import { ReactNode } from "react";
 
 const AuthLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <main className="relative h-screen w-full">
-      <div className=" absolute size-full">
+    <main className="h-screen w-full relative">
+      <div className="absolute inset-0">
         <Image
           src="/images/bg-img.png"
           alt="auth bg"
           fill
-          className="size-full"
+          className="object-cover size-full"
         />
       </div>
       {children}
