@@ -1,4 +1,3 @@
-
 export const config = {
-  matcher: ['/api/:path*', '/trpc/:path*']
+  matcher: [] // disables all middleware routes
 };
