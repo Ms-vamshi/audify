@@ -5,6 +5,7 @@
 Transform your ideas into professional-quality podcasts in minutes, not hours. Audify democratizes podcast creation by leveraging cutting-edge AI to eliminate traditional barriers like expensive equipment, technical expertise, and design skills.
 
 🔗 **Live Demo**: [audify.vercel.app](https://audify-git-main-sai-vamshi-mailas-projects.vercel.app)
+🔗 **Documentation**:  [audify.doc](https://drive.google.com/drive/folders/1N_1lE77lAaNTmpkIcmT5xKZdMgYRz6FA)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ms-vamshi/audify)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://typescript.org/)
